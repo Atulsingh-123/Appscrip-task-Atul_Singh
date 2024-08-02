@@ -36,7 +36,7 @@ const ProductData: React.FC = () => {
                 </div>
             )}
             
-            <div className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-${isSidebarOpen  ? '3' : '4'} lg:grid-cols-${isSidebarOpen ? '3' : '4'} gap-4 ${isSidebarOpen ? 'w-3/4' : 'w-full'}`}>
+            <div className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-${isSidebarOpen ? '3' : '4'} gap-4 ${isSidebarOpen ? 'w-3/4' : 'w-full'}`}>
                 {productData.map((product) => (
                     <ProductCard
                         key={product.id}
