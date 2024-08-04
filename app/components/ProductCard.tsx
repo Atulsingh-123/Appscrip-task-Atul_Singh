@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import '../css/ProductCard.css';
+import './ProductCard.css';
 
 interface ProductCardProps {
     title: string;

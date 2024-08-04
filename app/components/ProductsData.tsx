@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { useSidebar } from '../context/Context';
 import FilterSidebar from './FilterSidebar';
-import '../css/ProductData.css';
+import './ProductData.css';
 
 interface Products {
     id: number;

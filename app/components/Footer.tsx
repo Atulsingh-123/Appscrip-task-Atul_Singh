@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../css/Footer.css'
+import './Footer.css'
 
 const Footer: React.FC = () => {
     const [isMettMuseOpen, setIsMettMuseOpen] = useState(false);

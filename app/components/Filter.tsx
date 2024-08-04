@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useSidebar } from '../context/Context';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IoIosArrowDown } from 'react-icons/io';
-import '../css/Filter.css';
+import './Filter.css';
 
 const Filter: React.FC = () => {
     const { isSidebarOpen, toggleSidebar } = useSidebar();
