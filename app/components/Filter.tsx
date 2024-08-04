@@ -10,12 +10,14 @@ const Filter: React.FC = () => {
     const { isSidebarOpen, toggleSidebar } = useSidebar();
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState('RECOMMENDED');
+    const [isMobileFilterOpen, setMobileFilterOpen] = useState(false);
 
     const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
     const selectOption = (option: string) => {
         setSelectedOption(option);
         setDropdownOpen(false);
     };
+    const toggleMobileFilter = () => setMobileFilterOpen(!isMobileFilterOpen);
 
     return (
         <div className="filter-wrapper">
@@ -65,7 +67,7 @@ const Filter: React.FC = () => {
             </div>
 
             <div className="mobile-view">
-                <button className="mobile-filter-button">FILTER</button>
+                <button className="mobile-filter-button" onClick={toggleSidebar}>FILTER</button>
                 <div className="divider"></div>
                 <div className="relative">
                     <button className="sort-button" onClick={toggleDropdown}>
