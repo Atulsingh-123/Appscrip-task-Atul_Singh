@@ -4,7 +4,7 @@ import { LuShoppingBag } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
 import React from 'react';
 import { FaBars, FaCaretDown } from 'react-icons/fa';
-import './Navbar.css';
+
 
 const Navbar: React.FC = () => {
     return (
