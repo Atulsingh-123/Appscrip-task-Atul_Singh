@@ -1,0 +1,47 @@
+.filter-sidebar-wrapper {
+    width: 300px;
+    padding: 16px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.filter-checkbox {
+    margin-right: 8px;
+}
+
+.filter-label {
+    color: #2d2d2d;
+    font-weight: bold;
+}
+
+.filter-divider {
+    border: 1px solid #e5e7eb;
+    margin-bottom: 24px;
+}
+
+.filter-category {
+    margin-bottom: 24px;
+}
+
+.filter-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #2d2d2d;
+    font-weight: bold;
+}
+
+.filter-category-content {
+    color: #4b4b4b;
+    margin-top: 8px;
+}
+
+.filter-icon {
+    color: #292D32;
+    font-size: 1rem;
+    stroke-width: 0;
+}

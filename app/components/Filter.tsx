@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useSidebar } from '../context/Context';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IoIosArrowDown } from 'react-icons/io';
+import '../css/Filter.css';
 
 const Filter: React.FC = () => {
     const { isSidebarOpen, toggleSidebar } = useSidebar();
@@ -17,132 +18,78 @@ const Filter: React.FC = () => {
     };
 
     return (
-        <div>
-            <div className='w-full md:w-[95%] lg:w-[90%] mx-auto border-y-2  border-gray-200 mt-5'>
-                {/* Desktop View */}
-                <div className="hidden md:flex justify-between items-center py-4" style={{ height: '88px' }}>
-                    <div className="flex items-center">
-                        <span className="text-gray-500 font-simplon-norm text-lg font-bold leading-[40px] text-left">3425 ITEMS</span>
-                        <button
-                            className="ml-4 text-gray-700 font-adobe-caslon-pro text-base font-normal leading-[40px] text-left flex items-center"
-                            onClick={toggleSidebar}
-                        >
-                            {isSidebarOpen ? (
-                                <>
-                                    <MdKeyboardArrowLeft className="mr-2" />
-                                    HIDE FILTER
-                                </>
-                            ) : (
-                                <>
-                                    <MdKeyboardArrowRight className="mr-2" />
-                                    SHOW FILTER
-                                </>
-                            )}
-                        </button>
-                    </div>
-                    <div className="relative">
-                        <button
-                            className="text-gray-700 font-adobe-caslon-pro text-base font-normal leading-[40px] text-right flex items-center"
-                            onClick={toggleDropdown}
-                        >
-                            <h3 className='text-gray-500 font-simplon-norm text-lg font-bold leading-[40px] text-right'>
-                                {selectedOption}
-                            </h3>
-                            <span className="ml-2">
-                                <IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} />
-                            </span>
-                        </button>
+        <div className="filter-wrapper">
+            <div className="filter-container">
+                <div className="desktop-view">
+                    <div className="desktop-view-content">
+                        <div className="desktop-view-left">
+                            <span className="items-count">3425 ITEMS</span>
+                            <button className="filter-button" onClick={toggleSidebar}>
+                                {isSidebarOpen ? (
+                                    <>
+                                        <MdKeyboardArrowLeft className="icon" />
+                                        HIDE FILTER
+                                    </>
+                                ) : (
+                                    <>
+                                        <MdKeyboardArrowRight className="icon" />
+                                        SHOW FILTER
+                                    </>
+                                )}
+                            </button>
+                            <div className='Recommended'>
+                                <button className="sort-button" onClick={toggleDropdown}>
+                                    <h3 className="sort-option">{selectedOption}</h3>
+                                    <span className="icon-wrapper">
+                                        <IoIosArrowDown className="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
                         {isDropdownOpen && (
-                            <div className="absolute text-right right-0 mt-2 w-60 bg-white border border-gray-200 shadow-lg z-10">
-                                <button
-                                    className="block w-full text-right px-4 py-2  text-gray-700 hover:bg-gray-100 text-sm"
-                                    onClick={() => selectOption('RECOMMENDED')}
-                                >
-                                    {selectedOption === 'RECOMMENDED' && '✔ '}RECOMMENDED
-                                </button>
-                                <button
-                                    className="block w-full px-4 py-2 text-right text-gray-700 hover:bg-gray-100 text-sm"
-                                    onClick={() => selectOption('NEWEST FIRST')}
-                                >
-                                    {selectedOption === 'NEWEST FIRST' && '✔ '}NEWEST FIRST
-                                </button>
-                                <button
-                                    className="block w-full px-4 py-2 text-right text-gray-700 hover:bg-gray-100 text-sm"
-                                    onClick={() => selectOption('POPULAR')}
-                                >
-                                    {selectedOption === 'POPULAR' && '✔ '}POPULAR
-                                </button>
-                                <button
-                                    className="block w-full px-4 py-2 text-right text-gray-700 hover:bg-gray-100 text-sm"
-                                    onClick={() => selectOption('PRICE : HIGH TO LOW')}
-                                >
-                                    {selectedOption === 'PRICE : HIGH TO LOW' && '✔ '}PRICE : HIGH TO LOW
-                                </button>
-                                <button
-                                    className="block w-full px-4 py-2 text-right text-gray-700 hover:bg-gray-100 text-sm"
-                                    onClick={() => selectOption('PRICE : LOW TO HIGH')}
-                                >
-                                    {selectedOption === 'PRICE : LOW TO HIGH' && '✔ '}PRICE : LOW TO HIGH
-                                </button>
+                            <div className="dropdown-menu">
+                                {['RECOMMENDED', 'NEWEST FIRST', 'POPULAR', 'PRICE : HIGH TO LOW', 'PRICE : LOW TO HIGH'].map(option => (
+                                    <button
+                                        key={option}
+                                        className="dropdown-item"
+                                        onClick={() => selectOption(option)}
+                                    >
+                                        {selectedOption === option && '✔ '}
+                                        {option}
+                                    </button>
+                                ))}
                             </div>
                         )}
                     </div>
                 </div>
             </div>
 
-            {/* Mobile View */}
-            <div className="flex md:hidden justify-between items-center py-4 border-y-2 border-gray-200 w-[375px] h-[41px] mx-auto">
-                <button className="'text-gray-500 font-simplon-norm text-lg font-bold leading-[40px] text-left ml-4">FILTER</button>
-                <div className="border-r border-gray-300 h-6 mx-4"></div>
-                <div className="relative mr-4">
-                    <button
-                        className="text-gray-700 flex items-center"
-                        onClick={toggleDropdown}
-                    >
-                        <h3 className='text-gray-500 font-simplon-norm text-lg font-bold leading-[40px] text-right'>
-                            {selectedOption}
-                        </h3>
-                        <span className="ml-2">
-                            <IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} />
+            <div className="mobile-view">
+                <button className="mobile-filter-button">FILTER</button>
+                <div className="divider"></div>
+                <div className="relative">
+                    <button className="sort-button" onClick={toggleDropdown}>
+                        <h3 className="sort-option">{selectedOption}</h3>
+                        <span className="icon-wrapper">
+                            <IoIosArrowDown className="icon" />
                         </span>
                     </button>
                     {isDropdownOpen && (
-                        <div className="absolute right-0 mt-2 w-[235px] h-[324px] bg-white border border-gray-200 shadow-lg z-10">
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 text-sm  mt-3"
-                                onClick={() => selectOption('RECOMMENDED')}
-                            >
-                                {selectedOption === 'RECOMMENDED' && '✔ '}RECOMMENDED
-                            </button>
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 text-sm mt-3 font-simplon-norm font-normal"
-                                onClick={() => selectOption('NEWEST FIRST')}
-                            >
-                                {selectedOption === 'NEWEST FIRST' && '✔ '}NEWEST FIRST
-                            </button>
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 text-sm mt-3 font-simplon-norm font-normal"
-                                onClick={() => selectOption('POPULAR')}
-                            >
-                                {selectedOption === 'POPULAR' && '✔ '}POPULAR
-                            </button>
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 text-sm mt-3 font-simplon-norm font-normal"
-                                onClick={() => selectOption('PRICE : HIGH TO LOW')}
-                            >
-                                {selectedOption === 'PRICE : HIGH TO LOW' && '✔ '}PRICE : HIGH TO LOW
-                            </button>
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 text-sm mt-3 font-simplon-norm font-normal"
-                                onClick={() => selectOption('PRICE : LOW TO HIGH')}
-                            >
-                                {selectedOption === 'PRICE : LOW TO HIGH' && '✔ '}PRICE : LOW TO HIGH
-                            </button>
+                        <div className="dropdown-menu">
+                            {['RECOMMENDED', 'NEWEST FIRST', 'POPULAR', 'PRICE : HIGH TO LOW', 'PRICE : LOW TO HIGH'].map(option => (
+                                <button
+                                    key={option}
+                                    className="dropdown-item"
+                                    onClick={() => selectOption(option)}
+                                >
+                                    {selectedOption === option && '✔ '}
+                                    {option}
+                                </button>
+                            ))}
                         </div>
                     )}
                 </div>
             </div>
-
         </div>
     );
 };

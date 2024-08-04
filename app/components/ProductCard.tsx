@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import '../css/ProductCard.css';
 
 interface ProductCardProps {
     title: string;
     imageUrl: string;
 }
+
 const ProductCard: React.FC<ProductCardProps> = ({ title, imageUrl }) => {
     const [liked, setLiked] = useState(false);
 
@@ -13,30 +15,30 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, imageUrl }) => {
     };
 
     return (
-        <div className="bg-white overflow-hidden flex flex-col p-2 sm:p-4 md:p-6 lg:p-8">
-            <div className="relative w-full h-[224px] sm:w-full sm:h-[224px] md:w-full md:h-[266px] lg:w-full lg:h-[332px] xl:w-full xl:h-[399px]">
+        <div className="product-card">
+            <div className="product-image">
                 <img
                     src={imageUrl}
                     alt={title}
-                    className="object-cover w-full h-full"
+                    className="image"
                 />
             </div>
-            <h2 className='bg-white truncate'>
+            <h2 className='product-title'>
                 {title}
             </h2>
-            <div className="flex items-center mt-2">
-                <div className="text-gray-700 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm mr-2 sm:mr-4">
-                    <a href="#" className="text-blue-500 inline">Sign in</a> or <span className="inline">Create an account to see pricing</span>
+            <div className="product-botton">
+                <div className="product-info">
+                    <a href="#" className="sign-in">Sign in</a> or <span className="create-account">Create an account to see pricing</span>
                 </div>
-                <div className="ml-auto">
+                <div className="like-button-container">
                     <button
                         onClick={handleLiked}
-                        className="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-8 xl:h-8 flex items-center justify-center rounded-full"
+                        className="like-button"
                     >
                         {liked ? (
-                            <FaHeart className="text-red-500 w-full h-full" />
+                            <FaHeart className="like-icon liked" />
                         ) : (
-                            <FaRegHeart className="text-gray-500 w-full h-full" />
+                            <FaRegHeart className="like-icon not-liked" />
                         )}
                     </button>
                 </div>

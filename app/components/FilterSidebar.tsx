@@ -2,83 +2,91 @@
 
 import React from 'react';
 import { IoIosArrowDown } from "react-icons/io";
+import '../css/FilterSidebar.css';
 
 const FilterSidebar: React.FC = () => {
     return (
-        <div className="w-70 p-4">
-            <div className="flex items-center mb-6">
-                <input type="checkbox" id="customizable" className="mr-2" />
-                <label htmlFor="customizable" className="text-gray-800 font-bold">
+        <div className="filter-sidebar-wrapper">
+            <div className="filter-option">
+                <input type="checkbox" id="customizable" className="filter-checkbox" />
+                <label htmlFor="customizable" className="filter-label">
                     CUSTOMIZABLE
                 </label>
             </div>
 
-            <hr className="border-gray-200 mb-6" />
+            <hr className="filter-divider" />
 
-            <div className="mb-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
+            <div className="filter-category">
+                <div className="filter-category-header">
                     <span>IDEAL FOR</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
-            <div className="mb-4 mt-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
-                    <span>OCCASSION</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+
+            <hr className="filter-divider" />
+            <div className="filter-category">
+                <div className="filter-category-header">
+                    <span>OCCASION</span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
-            <div className="mb-4 mt-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
+            <hr className="filter-divider" />
+
+            <div className="filter-category">
+                <div className="filter-category-header">
                     <span>WORK</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
-            <div className="mb-4 mt-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
-                    <span>fABRIC</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+            <hr className="filter-divider" />
+
+            <div className="filter-category">
+                <div className="filter-category-header">
+                    <span>FABRIC</span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
-            <div className="mb-4 mt-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
+            <hr className="filter-divider" />
+
+            <div className="filter-category">
+                <div className="filter-category-header">
                     <span>SEGMENT</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
-            <div className="mb-4 mt-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
+            <hr className="filter-divider" />
+
+            <div className="filter-category">
+                <div className="filter-category-header">
                     <span>SUITABLE FOR</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
-            <div className="mb-4 mt-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
+            <hr className="filter-divider" />
+
+            <div className="filter-category">
+                <div className="filter-category-header">
                     <span>RAW MATERIALS</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
-            <div className="mb-4 mt-4">
-                <div className="flex justify-between items-center text-gray-800 font-bold">
+            <hr className="filter-divider" />
+
+            <div className="filter-category">
+                <div className="filter-category-header">
                     <span>PATTERN</span>
-                    <span><IoIosArrowDown className="text-[#292D32]" style={{ fontSize: '1rem', strokeWidth: 0 }} /></span>
+                    <span><IoIosArrowDown className="filter-icon" /></span>
                 </div>
-                <div className="text-gray-700 mt-2">All</div>
+                <div className="filter-category-content">All</div>
             </div>
-            <hr className="border-gray-200" />
+            <hr className="filter-divider" />
         </div>
     );
 };

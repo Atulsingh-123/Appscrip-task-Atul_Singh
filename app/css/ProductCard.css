@@ -1,0 +1,122 @@
+.product-card {
+    background-color: white;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem; 
+}
+
+@media (min-width: 640px) {
+    .product-card {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .product-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-card {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .product-card {
+        padding: 2.5rem;
+    }
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 224px; 
+}
+
+@media (min-width: 640px) {
+    .product-image {
+        height: 224px;
+    }
+}
+
+@media (min-width: 768px) {
+    .product-image {
+        height: 266px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-image {
+        height: 332px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .product-image {
+        height: 399px;
+    }
+}
+
+.image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.product-title {
+    background-color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.product-botton {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.product-info {
+    color: #4b5563;
+    font-size: 0.875rem;
+    margin-right: 1rem;
+}
+
+.sign-in {
+   text-decoration: underline;
+}
+
+.create-account {
+    display: inline;
+}
+
+.like-button-container {
+    margin-left: auto;
+}
+
+.like-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.like-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.liked {
+    color: #ef4444;
+}
+
+.not-liked {
+    color: #9ca3af;
+}
