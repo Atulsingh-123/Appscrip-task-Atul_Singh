@@ -473,7 +473,7 @@
 /* Desktop */
 @media (min-width: 1025px) {
     .desktop-view {
-        display: none;
+        display: flex;
     }
 
     .mobile-view {
