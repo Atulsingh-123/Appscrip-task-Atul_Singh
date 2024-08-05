@@ -438,6 +438,14 @@
 
 /* Tablet*/
 @media (max-width: 1024px) {
+    .desktop-view {
+        display: flex;
+    }
+
+    .mobile-view {
+        display: none;
+    }
+
     .items-count {
         margin-left: 0;
         display: flex;
@@ -446,8 +454,7 @@
     }
 
     .filter-button {
-        margin-left: auto;
-        margin-right: auto;
+            margin-left: 1rem;
     }
 
     .Recommended {
@@ -458,13 +465,13 @@
     }
 
     .sort-button {
-        margin-left: auto;
+        margin-left: 29rem;
         margin-right: auto;
     }
 
     .dropdown-menu {
         right: 0;
-        margin-top: 0.5rem; 
+        margin-top: 0.5rem;
         margin-left: auto;
         margin-right: 0rem;
     }
